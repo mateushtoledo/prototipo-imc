@@ -5,6 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <style>
+          .js_div {
+            display: none;
+            height: 50px;
+            width: 50px;
+          }
+        </style>
     </head>
     <body>
         <div class="col-md-12 container" id="selector">
@@ -12,8 +20,8 @@
             <label>Matricula:</label>
             <input type="text" class="form-control" placeholder="Sua matricula" name="matricula"/>
             <label>Selecione a categoria:</label>
-            <select class="form-control" name="category">
-                <option value="" selected>Selecione...</option>
+            <select class="form-control js-my-select" name="category">
+                <option value="nothing" selected>Selecione...</option>
                 <option value="sw_problem">Problemas com software</option>
                 <option value="hw_problem">Problemas com hardware</option>
                 <option value="network_problem">Problemas de acesso a rede</option>
@@ -26,8 +34,36 @@
                 <button class="btn btn-primary" style="margin-top: 40px">Proximo</button>
             </div>
         </div>
-        <div class="col-md-12" id="next-step">
-            
-        </div>
+          <div class="col-md-12 js_div sw_problem" id="next-step">
+            sw_problem
+          </div>
+          <div class="col-md-12 js_div hw_problem" id="next-step">
+            hw_problem
+          </div>
+          <div class="col-md-12 js_div network_problem" id="next-step">
+          network_problem
+          </div>
+          <div class="col-md-12 js_div other_problem" id="next-step">
+            other_problem
+          </div><div class="col-md-12 js_div sw_solicitation" id="next-step">
+            sw_solicitation
+          </div>
+          <div class="col-md-12 js_div hw_solicitation" id="next-step">
+            hw_solicitation
+          </div>
+          <div class="col-md-12 js_div other_solicitation" id="next-step">
+            other_solicitation
+          </div>
+
+        <script>
+        $(function() {
+          var $select = $('.js-my-select'),
+              $js_div =  $('.js_div');
+            $select.on('change', function() {
+              var value = '.' + $(this).val();
+              $js_div.show().not(value).hide();
+            });
+          });
+        </script>
     </body>
 </html>
