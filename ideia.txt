@@ -1,0 +1,27 @@
+Sistema para abertura de chamados
+    1º: Matricula - Conexão com SIGAA via API
+    2º: Seleciona o problema em uma lista, radio radio buttons
+            Software/programa não funcionando
+            Acesso a rede
+            Máquina/hardware não funcionando
+            Outros
+    3º: Identificador do equipamento
+        Se selecionar a opção 1:
+            Marie
+            Logisim
+            Netbeans
+            Postgres
+            Mysql
+            Elipse
+            Code blocks
+            xampp
+            Libre office
+            Open Office
+        Se selecionar opção 2:
+            Eduroam
+            Unifei
+            Outra
+        Se selecionar opção 3
+            Coloca uma mensagem ensinando o aluno a achar a etiqueta no equipamento, ele iforma o ID do equipamento.
+        Se selecionar opção 4
+            Text área para descrever o problema, descrição de prazo maior para ser atendido.
