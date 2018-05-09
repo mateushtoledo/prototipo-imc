@@ -7,25 +7,27 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class="col-md-12 container">
-            <div class="col-md-6 text-left">
-                <h2>Abertura de chamados - IMC</h2>
-                <form action="">
-                <label>Matricula:</label>
-                <input type="text" class="form-control" placeholder="Sua matricula" name="matricula"/>
-                <label>Selecione a categoria:</label>
-                <select class="form-control" name="category">
-                    <option value="" selected>Selecione...</option>
-                    <option value="sw_problem">Problemas com software</option>
-                    <option value="hw_problem">Problemas com hardware</option>
-                    <option value="network_problem">Problemas de acesso a rede</option>
-                    <option value="other_problem">Outros problemas</option>
-                    <option value="sw_solicitation">Solicitaçao de software</option>
-                    <option value="hw_solicitation">Solicitacao de hardware</option>
-                    <option value="other_solicitation">Outras solicitaçoes</option>
-                </select>
-                </form>
+        <div class="col-md-12 container" id="selector">
+            <h2>Abertura de chamados - IMC</h2>
+            <label>Matricula:</label>
+            <input type="text" class="form-control" placeholder="Sua matricula" name="matricula"/>
+            <label>Selecione a categoria:</label>
+            <select class="form-control" name="category">
+                <option value="" selected>Selecione...</option>
+                <option value="sw_problem">Problemas com software</option>
+                <option value="hw_problem">Problemas com hardware</option>
+                <option value="network_problem">Problemas de acesso a rede</option>
+                <option value="other_problem">Outros problemas</option>
+                <option value="sw_solicitation">Solicitaçao de software</option>
+                <option value="hw_solicitation">Solicitacao de hardware</option>
+                <option value="other_solicitation">Outras solicitaçoes</option>
+            </select>
+            <div class="text-center">
+                <button class="btn btn-primary" style="margin-top: 40px">Proximo</button>
             </div>
+        </div>
+        <div class="col-md-12" id="next-step">
+            
         </div>
     </body>
 </html>
