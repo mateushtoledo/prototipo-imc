@@ -7,16 +7,14 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <style>
-          .js_div {
-            display: none;
-            height: 50px;
-            width: 50px;
-          }
+            .js_div {
+                display: none;
+            }
         </style>
     </head>
     <body>
         <div class="col-md-12 container" id="selector">
-            <h2>Abertura de chamados - IMC</h2>
+            <h2>Passo 1 - Abertura de chamados - IMC</h2>
             <label>Matricula:</label>
             <input type="text" class="form-control" placeholder="Sua matricula" name="matricula"/>
             <label>Selecione a categoria:</label>
@@ -30,40 +28,108 @@
                 <option value="hw_solicitation">Solicitacao de hardware</option>
                 <option value="other_solicitation">Outras solicitaçoes</option>
             </select>
+        </div>
+        <div class="col-md-12 container js_div sw_problem" id="next-step">
+            <h2 style="margin-top: 40px">Passo 2 - Detalhes do problema com o software</h2>
+            <label>Selecione o software:</label>
+            <select class="form-control" name="software">
+                <option value="" selected>Selecione...</option>
+                <option value="sw_marie">[SWM1]-Marie</option>
+                <option value="sw_logisim">[SWL1]-Logisim</option>
+                <option value="sw_netbeans">[SWN1]-Netbeans</option>
+                <option value="sw_postgres">[SWP1]-Postgres</option>
+                <option value="sw_mysql">[SWM2]-Mysql</option>
+                <option value="sw_eclipse">[SWE1]-Eclipse</option>
+                <option value="sw_codeblocks">[SWC1]-Code blocks</option>
+                <option value="sw_xampp">[SWX1]-Xampp</option>
+                <option value="sw_libreoffice">[SWL2]-Libre office</option>
+                <option value="sw_openoffice">[SWO1]-Open office</option>
+            </select>
+            <label>Identificador da maquina (Informe "TODAS" em caso de falha geral):</label>
+            <input type="text" class="form-control" placeholder="ID da maquina" name="matricula"/>
+            <label>Descreva o problema:</label>
+            <textarea rows="4" class="form-control" placeholder="Descreva o problema, de forma clara e objetiva"></textarea>
             <div class="text-center">
-                <button class="btn btn-primary" style="margin-top: 40px">Proximo</button>
+                <button class="btn btn-primary" style="margin-top: 40px">Proximo passo</button>
             </div>
         </div>
-          <div class="col-md-12 js_div sw_problem" id="next-step">
-            sw_problem
-          </div>
-          <div class="col-md-12 js_div hw_problem" id="next-step">
-            hw_problem
-          </div>
-          <div class="col-md-12 js_div network_problem" id="next-step">
-          network_problem
-          </div>
-          <div class="col-md-12 js_div other_problem" id="next-step">
-            other_problem
-          </div><div class="col-md-12 js_div sw_solicitation" id="next-step">
-            sw_solicitation
-          </div>
-          <div class="col-md-12 js_div hw_solicitation" id="next-step">
-            hw_solicitation
-          </div>
-          <div class="col-md-12 js_div other_solicitation" id="next-step">
-            other_solicitation
-          </div>
+        <div class="col-md-12 js_div hw_problem" id="next-step">
+            <!--            <div class="alert alert-info text-center">
+                            <p>Nos computadores as etiquetas ficam ao lado do botao de ligar/desligar.</p>
+                            <p>Nos switchs as etiquetas ficam na parte de tras.</p>
+                            <p>Nos projetores as etiquetas ficam na parte de baixo da "gaiola" que os suporta.</p>
+                            <p>Nas impressoras as etiquetas ficam na lateral esquerda.</p>
+                        </div>-->
+            <h2 style="margin-top: 40px">Passo 2 - Detalhes do problema com o hardware</h2>
+            <label>Identificador do equipamento:</label>
+            <input type="text" class="form-control" placeholder="ID do equipamento" name="matricula"/>
+            <label>Descreva o problema:</label>
+            <textarea rows="4" class="form-control" placeholder="Descreva o problema, de forma clara e objetiva"></textarea>
+            <div class="text-center">
+                <button class="btn btn-primary" style="margin-top: 40px">Proximo passo</button>
+            </div>
+        </div>
+        <div class="col-md-12 js_div network_problem" id="next-step">
+            <h2 style="margin-top: 40px">Passo 2 - Detalhes do problema de rede</h2>
+            <label>Selecione a rede:</label>
+            <select class="form-control" name="software">
+                <option value="" selected>Selecione...</option>
+                <option value="eduroam">[EDRN1]-Eduroam</option>
+                <option value="unifei">[EFEI1]-Unifei</option>
+            </select>
+            <label>Local e horario:</label>
+            <textarea rows="4" name="locale" class="form-control" placeholder="Informe onde voce teve o problema, e que horario"></textarea>
+            <div class="text-center">
+                <button class="btn btn-primary" style="margin-top: 40px">Proximo passo</button>
+            </div>
+        </div>
+        <div class="col-md-12 js_div other_problem" id="next-step">
+            <h2 style="margin-top: 40px">Passo 2 - Outros problemas</h2>
+            <label>Local e horario:</label>
+            <textarea rows="4" name="locale" class="form-control" placeholder="Informe onde voce teve o problema, e que horario"></textarea>
+            <label>Descreva o problema:</label>
+            <textarea rows="4" name="locale" class="form-control" placeholder="Informe, de forma objetiva, o problema que teve"></textarea>
+            <div class="text-center">
+                <button class="btn btn-primary" style="margin-top: 40px">Proximo passo</button>
+            </div>
+        </div><div class="col-md-12 js_div sw_solicitation" id="next-step">
+            <h2 style="margin-top: 40px">Passo 2 - Solicitaçao de software</h2>
+            <label>Informe o software:</label>
+            <textarea rows="4" name="locale" class="form-control" placeholder="Informe o nome do software, versao, se possivel link para download"></textarea>
+            <label>Descreva a finalidade do software:</label>
+            <textarea rows="4" name="locale" class="form-control" placeholder="Informe, de forma objetiva, o que o software agrega para as atividades do instituto"></textarea>
+            <div class="text-center">
+                <button class="btn btn-primary" style="margin-top: 40px">Proximo passo</button>
+            </div>
+        </div>
+        <div class="col-md-12 js_div hw_solicitation" id="next-step">
+            <h2 style="margin-top: 40px">Passo 2 - Solicitaçao de hardware</h2>
+            <label>Informe o equipamento:</label>
+            <textarea rows="4" name="locale" class="form-control" placeholder="Informe o fabricante e o modelo"></textarea>
+            <label>Descreva a finalidade do equipamento:</label>
+            <textarea rows="4" name="locale" class="form-control" placeholder="Informe, de forma objetiva, em que fins o equipamento seria utilizado"></textarea>
+            <div class="text-center">
+                <button class="btn btn-primary" style="margin-top: 40px">Proximo passo</button>
+            </div>
+        </div>
+        <div class="col-md-12 js_div other_solicitation" id="next-step">
+            <h2 style="margin-top: 40px">Passo 2 - Descrever sua solicitacao</h2>
+            <label>Descreva a finalidade da solicitaçao:</label>
+            <textarea rows="4" name="locale" class="form-control" placeholder="Informe, de forma objetiva, o que voce necessita, e para que, o que isso agrega as atividades do instituto"></textarea>
+            <div class="text-center">
+                <button class="btn btn-primary" style="margin-top: 40px">Proximo passo</button>
+            </div>
+        </div>
 
         <script>
-        $(function() {
-          var $select = $('.js-my-select'),
-              $js_div =  $('.js_div');
-            $select.on('change', function() {
-              var value = '.' + $(this).val();
-              $js_div.show().not(value).hide();
+            $(function () {
+                var $select = $('.js-my-select'),
+                        $js_div = $('.js_div');
+                $select.on('change', function () {
+                    var value = '.' + $(this).val();
+                    $js_div.show().not(value).hide();
+                });
             });
-          });
         </script>
     </body>
 </html>
